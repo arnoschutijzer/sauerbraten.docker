@@ -1,0 +1,13 @@
+version: "3"
+services:
+  sauerbraten:
+    image: arnoschutijzer/sauerbraten:latest
+    restart: always
+    networks:
+      - sauernet
+    ports:
+      - "28785:28785"
+      - "28786:28786"
+
+networks:
+  sauernet:
