@@ -1,8 +1,8 @@
 version: "3"
 services:
   sauerbraten:
-    image: sauerbraten:latest
-    build: .
+    image: ghcr.io/arnoschutijzer/sauerbraten.docker:master
+    # build: .
     restart: always
     platform: linux/amd64
     networks:
