@@ -1,13 +1,17 @@
 version: "3"
 services:
   sauerbraten:
-    image: arnoschutijzer/sauerbraten:latest
+    image: sauerbraten:latest
+    build: .
     restart: always
+    platform: linux/amd64
     networks:
       - sauernet
     ports:
-      - "28785:28785"
-      - "28786:28786"
+      - "28785:28785/tcp"
+      - "28785:28785/udp"
+      - "28786:28786/tcp"
+      - "28786:28786/udp"
 
 networks:
   sauernet:

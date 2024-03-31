@@ -1,13 +1,14 @@
-FROM ubuntu
+FROM --platform=linux/amd64 ubuntu
 
 EXPOSE 28785/udp 28785/tcp 28786/udp 28786/tcp
 
 RUN apt-get update -y
-RUN apt-get install wget vim -y
+RUN apt-get install bzip2 -y
 
 WORKDIR /home/sauerbraten_server
 
-RUN wget -O sauerbraten.tar.bz2 https://sourceforge.net/projects/sauerbraten/files/sauerbraten/2013_01_04/sauerbraten_2013_04_04_collect_edition_linux.tar.bz2/download
-RUN tar xvjf sauerbraten.tar.bz2
+ADD https://sourceforge.net/projects/sauerbraten/files/sauerbraten/2020_11_29/sauerbraten_2020_12_27_linux.tar.bz2/download sauerbraten.tar.bz2
+
+RUN tar -xvf sauerbraten.tar.bz2
 
 CMD [ "./sauerbraten/bin_unix/linux_64_server" ]
