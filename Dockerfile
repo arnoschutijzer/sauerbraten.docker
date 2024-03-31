@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 ubuntu
+FROM ubuntu:23.10
 
 EXPOSE 28785/udp 28785/tcp 28786/udp 28786/tcp
 
